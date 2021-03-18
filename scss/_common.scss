@@ -15,6 +15,9 @@
 .animated {
   transition: left 1s linear;
 }
+.animatedLittleFast {
+  transition: left 0.7s linear;
+}
 
 // class="radius" 회색 테두리 태그
 .radius {
