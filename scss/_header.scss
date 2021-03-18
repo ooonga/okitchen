@@ -1,0 +1,222 @@
+header {
+  width: 100%;
+  background: linear-gradient(to right, $colorPrimary, $colorSubColor);
+  padding: 0 10px;
+  .header_wrap {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    @include desktop {
+      width: 100%;
+    }
+  }
+  h1 {
+    width: 240px;
+    height: 105px;
+    a {
+      height: 100%;
+      display: block;
+      background: url(../img/common/logo.png) no-repeat;
+      background-position: center;
+    }
+    span {
+      @include blind;
+    }
+  }
+  .search {
+    position: relative;
+    margin: 20px 0;
+    form {
+      width: 550px;
+      height: 65px;
+      border-bottom: 2px solid #fff;
+    }
+    label {
+      position: absolute;
+      left: 5px;
+      color: #ffffff;
+      font-size: $fontSizeL;
+      font-weight: 700;
+      line-height: 65px;
+    }
+    input[type="text"] {
+      width: 100%;
+      height: 100%;
+      color: #ffffff;
+      font-size: $fontSizeL * 1.3;
+      padding: 0 5px;
+    }
+    button {
+      position: absolute;
+      top: 13px;
+      right: 10px;
+      width: 37px;
+      height: 39px;
+      color: transparent;
+      background: url(../img/common/search.png) no-repeat;
+    }
+  }
+  .header_hash {
+    @include clear;
+    li {
+      float: left;
+      line-height: 105px;
+    }
+    li + li {
+      margin-left: 25px;
+    }
+    a {
+      color: #fff;
+      font-size: $fontSizeN;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+nav {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid $colorFontLight;
+  padding: 0 10px;
+  .nav_wrap {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    @include desktop {
+      width: 100%;
+    }
+    > ul > li > a:hover {
+      color: $colorSubColor;
+    }
+  }
+  .category {
+    @include clear;
+    > li {
+      position: relative;
+      padding: 24px 0;
+      float: left;
+      & + li {
+        margin: 0 0 0 30px;
+      }
+      &:first-child > a {
+        padding: 0 0 0 45px;
+        &:hover::before {
+          @include imgSprite(38px, 38px, 300px, 0px, -37.5px);
+        }
+      }
+      &:first-child > a::before {
+        top: -8px;
+        left: 0;
+        @include content;
+        @include imgSprite(38px, 38px, 300px, 0px, -1px);
+      }
+      &:nth-child(2n)::before {
+        @include content;
+        width: 1px;
+        height: 20px;
+        left: -15px;
+        background-color: $colorFontGray;
+      }
+      &:last-child > a {
+        color: $colorSubColor;
+      }
+      > a {
+        position: relative;
+        color: $colorFontSubBlack;
+        font-size: $fontSizeL;
+        transition: 0.2s;
+      }
+    }
+    .drops {
+      position: absolute;
+      top: 90%;
+      width: 350px;
+      height: 440px;
+      padding: 50px;
+      color: $colorFontGray;
+      background-color: #ffffff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+      ol > li {
+        line-height: 2.2;
+        margin: 0 10px 0 0;
+        a {
+          display: block;
+          padding: 0 0 0 5px;
+        }
+        a:hover {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+    .on_Drops {
+      top:100%;
+      visibility: visible;
+      opacity: 1;
+    }
+    .drop_left {
+      float: left;
+      width: 35%;
+    }
+    .drop_right {
+      float: right;
+      width: 65%;
+      padding: 0 0 0 30px;
+      border-left: 1px solid $colorFontLight;
+    }
+    .drop_both {
+      display: block;
+      clear: both;
+      width: 100%;
+      padding: 40px 0 0;
+      a {
+        position: relative;
+        font-size: $fontSizeS;
+        padding: 0 0 0 25px;
+      }
+      a:hover {
+        color : $colorSubColor;
+      }
+      a::before {
+        bottom: -2px;
+        left: 0;
+        @include content;
+        @include imgSprite(18px, 18px, 240px, -65px, -2px);
+      }
+    }
+  }
+  .links {
+    @include clear;
+    > li {
+      position: relative;
+      padding: 26px 0;
+      float: left;
+      & + li {
+        margin-left: 20px;
+      }
+      a::before  {
+        top: 16px;
+        left: 0;
+        @include content;
+        @include imgSprite(35px, 35px, 300px);
+      }
+      &:first-child a::before {
+        background-position: -42px -2px;
+      }
+      &:last-child a::before {
+        background-position: -42px -39px;
+      }
+    }
+    a {
+      color: $colorFontGray;
+      padding: 0 0 0 40px;
+      transition: 0.2s;
+    }
+  }
+}

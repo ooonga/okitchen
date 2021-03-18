@@ -1,0 +1,47 @@
+// 텍스트 한 줄 줄임
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 텍스트 정보 숨김
+@mixin blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+// 가상 선택자
+@mixin content {
+  content: "";
+  position: absolute;
+}
+
+// float 해제
+@mixin clear {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// 이미지 스프라이트 매개변수 굿....
+@mixin imgSprite($width, $height, $size, $x: 0, $y: 0) {
+  width: $width;
+  height: $height;
+  background: url("../img/common/icon_sprite.png") no-repeat;
+  background-size: $size auto;
+  background-position: $x $y;
+}
+
+// 미디어쿼리 분기점
+@mixin desktop {
+  @media screen and (max-width: 1230px) {
+    @content;
+  }
+}

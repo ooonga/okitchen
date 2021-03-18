@@ -1,0 +1,120 @@
+// 감싸안아
+.wrap {
+  min-width: 1024px;
+}
+
+// 슬라이더
+.slider_container {
+  position: relative;
+  overflow: hidden;
+  .slider {
+  }
+  .slides {
+  }
+}
+.animated {
+  transition: left 1s linear;
+}
+
+// class="radius" 회색 테두리 태그
+.radius {
+  display: inline-block;
+  color: $colorFontGray;
+  font-size: $fontSizeN;
+  text-align: center;
+  border-radius: 50px;
+  border: 1px solid $colorFontGray;
+  background-color: #ffffff;
+  padding: 5px 15px 7px;
+  &:hover {
+    color: #ffffff;
+    border: 1px solid $colorSubColor;
+    background-color: $colorSubColor;
+  }
+}
+
+// 레시피 정보
+.item {
+  position: relative;
+}
+.thumb {
+  width: 100%;
+  overflow: hidden;
+  a {
+    display: block;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    transition: 0.3s;
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+.info {
+  padding: 30px 0 10px;
+  .recipeTag {
+    color: $colorFontGray;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0 0 5px 0;
+  }
+  li {
+    float: left;
+  }
+  li + li {
+    margin: 0 0 0 5px;
+  }
+  h4 {
+    display: block;
+    font-size: $fontSizeItemName;
+    padding: 0 0 10px 0;
+  }
+}
+
+//main section heading!
+.section_heading {
+  text-align: center;
+  width: 100%;
+  margin: 30px 0 50px;
+  h2 {
+    position: relative;
+    font-size: $fontSizeSectionName;
+    letter-spacing: -0.5px;
+    padding: 20px 0 35px;
+  }
+  h2::after {
+    @include content;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    width: 40px;
+    height: 2px;
+    background-color: $colorFontBlack;
+  }
+  p {
+    color: $colorFontGray;
+    font-size: $fontSizeL;
+  }
+}
+
+// 위로가기
+.btn_top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  background: url("../img/common/btn_top.png") no-repeat;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.active_btnTop {
+  opacity: 1;
+  visibility: visible;
+}

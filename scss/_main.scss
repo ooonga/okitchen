@@ -1,0 +1,536 @@
+.contents {
+  position: relative;
+  width: 100%;
+  .inner {
+    margin: 0 auto;
+    width: 1200px;
+    @include desktop {
+      width: 100%;
+    }
+  }
+  // 가로 길이 화면 꽉 차게
+  .inner.full {
+    width: 100%;
+  }
+}
+
+// 메인 비주얼
+.slider_container.main_visual {
+  width: 100%;
+  height: 725px;
+  // 메인 비주얼 슬라이더 컨텐츠 영역
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .slides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include desktop {
+      background-position: left -330px center;
+    }
+    &.s1_bg {
+      background-image: url("../img/main/main_visual01.jpg");
+    }
+    &.s2_bg {
+      background-image: url("../img/main/main_visual02.jpg");
+    }
+    &.s3_bg {
+      background-image: url("../img/main/main_visual03.jpg");
+    }
+    &.s4_bg {
+      background-image: url("../img/main/main_visual04.jpg");
+    }
+    &.s5_bg {
+      color: #ffffff;
+      background-image: url("../img/main/main_visual05.jpg");
+      .slides_info > p:nth-of-type(1) strong {
+        border-bottom: 3px solid #ffffff;
+      }
+    }
+    &.s6_bg {
+      .slides_info h3 {
+        font-size: 34px;
+      }
+      background-image: url("../img/main/main_visual06.jpg");
+    }
+  }
+  .slides_info {
+    position: relative;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    line-height: 1.2;
+    > p:nth-of-type(1) {
+      font-size: $fontSizeMark;
+      padding: 0 0 30px;
+      strong {
+        display: inline-block;
+        padding: 0 0 3px 0;
+        border-bottom: 3px solid $colorFontBlack;
+      }
+    }
+    h3 {
+      font-size: $fontSizeVisualSub;
+    }
+    h2 {
+      font-size: $fontSizeVisual;
+      font-weight: 800;
+    }
+    > p:nth-child(4) {
+      margin: 30px 0 0;
+    }
+    ul {
+      margin: 30px 0 0;
+      display: flex;
+      > li + li {
+        margin: 0 0 0 10px;
+      }
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      margin: 35px 0 0;
+      &::after {
+        top: 20px;
+        right: 40px;
+        @include content;
+        @include imgSprite(15px, 15px, 450px, -340px, -48px);
+      }
+    }
+    .radius:hover {
+      color: $colorFontGray;
+      border: 1px solid $colorFontGray;
+      background-color: #ffffff;
+    }
+    // 메인 비주얼 슬라이더 빨강 버튼
+    .btn_red {
+      padding: 15px 75px 15px 40px;
+      color: #ffffff;
+      font-size: $fontSizeN;
+      border-radius: 5px;
+      background-color: $colorSubColor;
+    }
+    @include desktop {
+      width: 100%;
+    }
+  }
+  // 메인 비주얼 슬리이더 버튼
+  .slider_nav {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -590px;
+    width: 160px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    @include desktop {
+      left: 10px;
+      margin-left: 0;
+    }
+  }
+  button {
+    position: absolute;
+    top: 1px;
+    @include imgSprite(30px, 30px, 400px, -332px, -35px);
+    &.btn_slidePrev {
+      left: 40px;
+      background-size: 230px auto;
+      background-position: -169px -39px;
+    }
+    &.btn_slideNext {
+      right: 0;
+      background-size: 230px auto;
+      background-position: -196px -39px;
+    }
+    &.btn_slideAuto {
+      left: 5px;
+      &.active {
+        background-position: -364px -35px;
+      }
+    }
+    span {
+      @include blind;
+    }
+  }
+  .current {
+    color: #ffffff;
+    padding: 5px 0 5px 85px;
+    span {
+      line-height: 1.5;
+    }
+  }
+}
+
+// section01 인기 검색어
+.contents.section01 {
+  .inner {
+    margin: 100px auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list_left {
+    width: 24%;
+    h2 {
+      font-size: $fontSizeSectionName;
+    }
+    strong {
+      display: block;
+      padding: 5px 0 0;
+    }
+    p {
+      position: relative;
+      color: $colorFontGray;
+      padding: 30px 0 20px;
+    }
+    P::before {
+      @include content;
+      top: 15px;
+      width: 40px;
+      height: 1.5px;
+      background-color: $colorFontBlack;
+    }
+    ol {
+      > li + li {
+        margin: 6px 0 0 0;
+      }
+      .radius {
+        padding: 6px 20px 8px;
+      }
+    }
+  }
+  .list_right {
+    width: 75%;
+    > ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    .right_item {
+      width: 30%;
+      min-width: 245px !important;
+      height: 470px;
+      text-align: center;
+      h3 {
+        font-size: $fontSizeL;
+        text-transform: capitalize;
+        padding: 35px 0 0;
+        > strong {
+          display: block;
+          font-size: $fontSizeItemName;
+          padding: 10px 0 15px;
+        }
+      }
+    }
+    .right01 {
+      background-color: #ffed93;
+      .slider_container.kids {
+        width: 210px;
+        height: 350px;
+        margin: 0 auto;
+        padding: 10px 0 0;
+      }
+      .slider {
+        @include clear;
+      }
+      .slides {
+        position: absolute;
+        background-color: #ffed93;
+        top: 0;
+        z-index: 0;
+        opacity: 0;
+        transition: all 0.5s ease-in;
+        &.showing {
+          z-index: 1;
+          opacity: 1;
+        }
+      }
+      .slides a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .thumb_sl {
+        width: 210px;
+        height: 210px;
+        background-position: center;
+        background-size: cover;
+      }
+      .slides:nth-child(1) .thumb_sl {
+        background-image: url("../img/main/section01_right01_no01.png");
+      }
+      .slides:nth-child(2) .thumb_sl {
+        background-image: url("../img/main/section01_right01_no02.png");
+      }
+      .slides:nth-child(3) .thumb_sl {
+        background-image: url("../img/main/section01_right01_no03.png");
+      }
+      .slider_nav {
+        position: relative;
+        top: 310px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0 0;
+      }
+      button {
+        color: transparent;
+        font-size: 0;
+        @include imgSprite(30px, 12px, 400px, -122px, -76px);
+      }
+      .btn_slideNext {
+        background-position: -151px -76px;
+      }
+    }
+    .right02 {
+      position: relative;
+      background-color: #f5eee5;
+      > p {
+        color: $colorFontGray;
+        padding: 0 0 30px;
+      }
+      .btn_gray {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -18px;
+        padding: 11px 25px;
+        color: #ffffff;
+        border-radius: 50px;
+        background-color: $colorFontGray;
+        transition: 0.3s;
+      }
+      .btn_gray:hover {
+        background-color: $colorSubColor;
+      }
+    }
+    .right03 {
+      text-align: left;
+      background: url("../img/main/sec01_right03Bg.jpg") no-repeat;
+      background-size: cover;
+      background-position: center;
+      > a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        &::before {
+          @include content;
+          top: 10px;
+          left: 9px;
+          width: 87.5%;
+          height: 93%;
+          border: 7px solid #ffffff;
+        }
+        &::after {
+          @include content;
+          bottom: 0;
+          width: 100%;
+          height: 259px;
+          background: url("../img/main/sec01_right03Up.jpg") no-repeat;
+          background-position: center;
+        }
+        > p {
+          color: #ffffff;
+          line-height: 1.2;
+          padding: 35px 0 0 10%;
+        }
+        strong {
+          display: block;
+          font-size: $fontSizeMark;
+        }
+        strong:last-of-type {
+          padding: 0 0 20px 0;
+        }
+      }
+    }
+  }
+}
+
+//section 가로 배너
+.contents.banners {
+  text-align: center;
+  line-height: 1.2;
+  .text_bn {
+    padding: 50px 0 0;
+    span {
+      display: block;
+      color: $colorSubColor;
+      font-size: $fontSizeMark * 0.7;
+    }
+    h3 {
+      font-size: $fontSizeMark;
+    }
+    h2 {
+      font-size: $fontSizeSectionName;
+    }
+  }
+  .radius_bn {
+    display: inline-block;
+    font-size: $fontSizeL;
+    margin: 20px 0 0;
+    padding: 10px 30px 8px;
+    border-radius: 50px;
+    border: 2px solid $colorFontBlack;
+    background-color: transparent;
+    transition: 0.3s;
+    &:hover {
+      color: #ffffff;
+      background-color: $colorFontBlack;
+    }
+  }
+  // 오뚜기몰
+  &.section02 {
+    height: 405px;
+    background: url(../img/main/banner_mall.jpg) no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    @include desktop {
+      background-position: 54% center;
+    }
+  }
+  // 라이브러리 H
+  &.section06 {
+    height: 300px;
+    background: url(../img/main/banner_library.jpg) no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    @include desktop {
+      background-position: 54% center;
+    }
+  }
+}
+
+// section03 추천 레시피
+.contents.section03 {
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .items_wrap {
+    width: 50%;
+    overflow: hidden;
+  }
+  .item {
+    padding: 10px;
+  }
+  .big {
+    width: 100%;
+    height: auto;
+    .info {
+      padding: 30px 0 10px 20px;
+      background-color: #ffed93;
+    }
+  }
+  .small {
+    width: 50%;
+    float: left;
+    z-index: 1;
+  }
+}
+
+// section04 셰프의 팁 간편식 업그레이드
+.contents.section04 {
+  text-align: center;
+  .inner {
+    padding: 0 0 10px;
+    margin: 100px auto;
+    background: url("../img/main/sec04_bg.jpg") no-repeat;
+    background-position: bottom center;
+    background-size: 100%;
+  }
+  .tips {
+    width: 100%;
+  }
+  .slider {
+    position: relative;
+  }
+  .slides {
+    position: absolute;
+    top: 0;
+    width: 30.333%;
+    min-width: 365px;
+    margin: 0 1.5%;
+    @include desktop {
+      min-width: 0;
+    }
+  }
+  .hiddenSlides {
+    opacity: 0;
+    visibility: hidden;
+    width: 30.333%;
+    min-width: 365px;
+    margin: 0 1.5%;
+    @include desktop {
+      min-width: 0;
+    }
+  }
+  .slider_nav {
+    position: absolute;
+    width: 38%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    button {
+      position: absolute;
+      color: transparent;
+      @include imgSprite(65px, 25px, 400px);
+    }
+    button.btn_slidePrev {
+      left: 0;
+      background-position: -258px -130px;
+    }
+    button.btn_slideNext {
+      right: 0;
+      background-position: -325px -130px;
+    }
+  }
+  .info .recipeTag {
+    color: $colorFontBlack;
+  }
+  .info h4 {
+    font-size: $fontSizeMark;
+  }
+  .radius_bk {
+    display: inline-block;
+    font-size: $fontSizeL;
+    padding: 10px 40px 8px;
+    border-radius: 50px;
+    border: 2px solid $colorFontBlack;
+    background-color: transparent;
+    transition: 0.3s;
+    &:hover {
+      color: #ffffff;
+      background-color: $colorFontBlack;
+    }
+  }
+}
+
+// section05 인기 레시피
+.contents.section05 {
+  .inner {
+    margin: 100px auto 50px;
+  }
+  .items_wrap {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    width: 25%;
+    padding: 10px 10px 50px 10px;
+  }
+  .thumb {
+    max-height: 215px;
+  }
+}

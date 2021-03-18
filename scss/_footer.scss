@@ -1,0 +1,86 @@
+footer {
+  position: relative;
+  color: #ffffff;
+}
+
+.footer_top {
+  background-color: #a20a1f;
+  padding: 0 10px;
+}
+.footer_list {
+  @include clear;
+  margin: 0 auto;
+  width: 1200px;
+  @include desktop {
+    width: 100%;
+  }
+}
+.footer_list li {
+  float: left;
+  font-size: $fontSizeL;
+  padding: 20px 0;
+  a {
+    display: block;
+  }
+}
+.footer_list > li + li {
+  margin: 0 0 0 30px;
+}
+.footer_bottom {
+  padding: 50px 10px 80px;
+  background-color: $colorPrimary;
+}
+.footer_info {
+  float: left;
+  line-height: 1.5;
+  strong {
+    font-weight: 800;
+  }
+  p:nth-child(3) {
+    padding: 30px 0 0;
+  }
+}
+.footer_sitemap {
+  position:relative;
+  float: right;
+  select {
+    padding: 16px 40px 16px 25px;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    color: $colorFontGray;
+    font-size: $fontSizeN;
+    text-transform: uppercase;
+    appearance:none;
+    background: #ffffff url('../img/common/family.png') no-repeat;
+    background-position: right 20px center;
+  }
+  option {
+    font-size: 16px;
+  }
+  > ul {
+    @include clear;
+    li {
+      float: right;
+    }
+  }
+  > ul li a {
+    margin: 0 5px;
+    span {
+      @include blind;
+    }
+    @include imgSprite(35px,35px,230px);
+  }
+  > ul li:nth-child(1) a {
+    background-size: 245px;
+    background-position: -74px -69px;
+    
+  }
+  > ul li:nth-child(2) a {
+    background-position: -35px -66px;
+  }
+  > ul li:nth-child(3) a {
+    
+    background-position: 0px -66px;
+  }
+}
