@@ -50,3 +50,20 @@ button {
 button {
   cursor: pointer;
 }
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+table {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  caption {
+    @include blind;
+  }
+}

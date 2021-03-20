@@ -79,6 +79,7 @@ nav {
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid $colorFontLight;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.05);
   padding: 0 10px;
   .nav_wrap {
     margin: 0 auto;
@@ -156,7 +157,7 @@ nav {
       }
     }
     .on_Drops {
-      top:100%;
+      top: 100%;
       visibility: visible;
       opacity: 1;
     }
@@ -181,7 +182,7 @@ nav {
         padding: 0 0 0 25px;
       }
       a:hover {
-        color : $colorSubColor;
+        color: $colorSubColor;
       }
       a::before {
         bottom: -2px;
@@ -200,7 +201,7 @@ nav {
       & + li {
         margin-left: 20px;
       }
-      a::before  {
+      a::before {
         top: 16px;
         left: 0;
         @include content;

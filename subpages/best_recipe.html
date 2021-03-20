@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오'키친</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+</head>
+<body>
+  <div class="wrap">
+    <!-- 상단 메뉴 -->
+    <header>
+      <div class="header_wrap">
+        <h1><a href="../index.html"><span>오키친로고</span></a></h1>
+        <div class="search">
+          <form id="search_form" name="search_bar" method="post">
+            <label for="search_info" id="search_name">오뚜기 제품, 요리명 등 다양하게 검색해보세요! (예:카레)</label>
+            <input type="text" id="search_info" autocomplete="off" />
+            <button type="button">검색</button>
+          </form>
+        </div>
+        <ul class="header_hash">
+          <li><a href="#">#라면맛집</a></li>
+          <li><a href="#">#XO만두</a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- 메뉴 -->
+    <nav>
+      <div class="nav_wrap">
+        <ul class="category">
+          <li><a href="#">카테고리</a>
+            <ul class="drops">
+              <li class="drop_left">
+                <ol>
+                  <li><a href="#">종류</a></li>
+                  <li><a href="#">재료</a></li>
+                  <li><a href="#">방법</a></li>
+                  <li><a href="#">테마</a></li>
+                  <li><a href="#">기념일</a></li>
+                  <li><a href="#">도구</a></li>
+                </ol>
+              </li>
+              <li class="drop_right">
+                <ol>
+                  <li><a href="#">#카레</a></li>
+                  <li><a href="#">#마요네스</a></li>
+                  <li><a href="#">#분식</a></li>
+                  <li><a href="#">#브런치</a></li>
+                  <li><a href="#">#집밥</a></li>
+                  <li><a href="#">#치즈듬뿍</a></li>
+                  <li><a href="#">#캠핑</a></li>
+                  <li><a href="#">#간단 꿀조합</a></li>
+                </ol>
+              </li>
+              <li class="drop_both">
+                <a href="#">카테고리 전체보기</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">인기 레시피</a></li>
+          <li><a href="./new_recipe.html">신규 레시피</a></li>
+          <li><a href="./weighing_tips.html">계량 팁</a></li>
+        </ul>
+        <ul class="links">
+          <li><a href="#">오뚜기몰</a></li>
+          <li><a href="#">최근 본 레시피</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="contents sub best_bg">
+        <div class="inner">
+          <div class="page_nav">
+            <span>페이지 경로</span>
+            <ul>
+              <li><a href="../index.html">홈</a></li>
+              <li><a href=#">인기레시피</a></li>
+            </ul>
+          </div>
+          <div class="page_heading">
+            <h2>인기레시피</h2>
+            <ul class="tags">
+              <li><a href="#" class="radius">#카레</a></li>
+              <li><a href="#" class="radius">#마요네스</a></li>
+              <li><a href="#" class="radius">#분식</a></li>
+              <li><a href="#" class="radius">#브런치</a></li>
+              <li><a href="#" class="radius">#집밥</a></li>
+              <li><a href="#" class="radius">#치즈듬뿍</a></li>
+              <li><a href="#" class="radius">#캠핑</a></li>
+              <li><a href="#" class="radius">#간단 꿀조합</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contents sub">
+        <div class="inner">
+          <div class="lookup">
+            <p>검색결과<span>34</span>건 조회</p>
+            <ul class="lookup_util">
+              <li><a href="#">최신순</a></li>
+              <li><a href="#">조회순</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="contents">
+        <div class="content" id="recipe"></div>
+        <div class="page_indicate">
+          1,2,>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_top">
+        <ul class="footer_list">
+          <li><a href="./best_recipe.html">인기 레시피</a></li>
+          <li><a href="#">셰프의 팁</a></li>
+          <li><a href="./new_recipe.html">신규 레시피</a></li>
+        </ul>
+      </div>
+      <div class="footer_bottom">
+        <div class="footer_list">
+          <div class="footer_info">
+            <strong>(주)오뚜기</strong>
+            <p>경기도 안양시 동안구 홍안대로 000</p>
+            <p>Copyright ⓒ ottogi co.,Ltd All Rights Reserved.</p>
+          </div>
+          <div class="footer_sitemap">
+            <select>
+              <option value>family site</option>
+              <option value>(주)오뚜기</option>
+              <option value>오뚜기몰</option>
+              <option value>오뚜기함태호재단</option>
+            </select>
+            <ul>
+              <li><a href="#"><span>오뚜기 인스타그램</span></a></li>
+              <li><a href="#"><span>오뚜기 페이스북</span></a></li>
+              <li><a href="#"><span>오뚜기 블로그</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button type="button" class="btn_top"></button>
+  </div>
+  <script src="../js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+// sub 공통 부분
+.content {
+  h3 {
+    font-size: $fontSizeMark;
+  }
+}
+// 계량 팁
+.best_bg {
+  background-color: #eeeeee;
+}
+.page_nav {
+  @include clear;
+  span {
+    @include blind;
+  }
+  ul {
+    position: relative;
+    float: right;
+  }
+  li {
+    float: left;
+    padding: 20px 0 0;
+    color: $colorFontGray;
+    font-size: $fontSizeS;
+  }
+  li + li {
+    margin: 0 0 0 20px;
+    &::before {
+      content: "/";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+  }
+}
+.page_heading {
+  padding: 50px 0;
+  text-align: center;
+  h2 {
+    font-size: $fontSizeSectionName;
+    font-weight: 800;
+  }
+  p {
+    margin: 30px 0;
+    color: $colorFontGray;
+    font-size: $fontSizeN;
+    line-height: 1.8;
+  }
+  .tags {
+    display: inline-block;
+    margin: 50px 0 0;
+  }
+}
+
+.content_text {
+  text-align: center;
+  padding: 50px 0;
+  h3 {
+    padding: 65px 0 0;
+    color: $colorPrimary;
+    font-weight: 800;
+    background-position: top center;
+    background-repeat: no-repeat;
+    &.spoon {
+      background-image: url("../img/sub_weighing/tip_icon01.png");
+    }
+    &.cup {
+      background-image: url("../img/sub_weighing/tip_icon02.png");
+    }
+    &.food {
+      background-image: url("../img/sub_weighing/tip_icon03.png");
+    }
+  }
+  p {
+    color: $colorFontGray;
+    font-size: $fontSizeL;
+    strong {
+      display: block;
+      color: $colorFontBlack;
+      font-size: 26px;
+      margin: 30px 0 15px;
+    }
+  }
+}
+.content_main {
+  @include clear;
+  padding: 0 0 60px 0;
+  border-bottom: 1px solid $colorFontGray;
+  > li {
+    width: 46%;
+    float: left;
+    padding: 0 0 40px 0;
+  }
+  > li + li {
+    margin: 0 0 0 8%;
+  }
+  h4 {
+    font-size: $fontSizeL;
+    font-weight: 800;
+    padding: 30px 0 15px;
+    line-height: 1.3;
+  }
+  p {
+    color: $colorFontGray;
+  }
+}
+.content_main.cn_last {
+  border-bottom: 0;
+  > li {
+    width: 23.5%;
+    margin: 0 2% 0 0;
+  }
+  > li:nth-child(4n) {
+    margin: 0;
+  }
+}
+// 요리 레시피 상세페이지
+.sub_detail_top_img {
+  background: #eeeeee url("../img/sub_detail/bg.png");
+  background-repeat: repeat-x;
+  background-position: 60%;
+  text-align: center;
+  img {
+    width: 80%;
+    min-width: 1200px;
+    @include desktop {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+.sub_detail_main {
+  @include clear;
+  // 섹션 왼쪽 : 음식정보-만드는 방법
+  .detail_left {
+    float: left;
+    width: 65%;
+    word-break: keep-all;
+  }
+  .infomation {
+    border-bottom: 1px solid $colorFontLight;
+    h2 {
+      font-size: $fontSizeSectionName;
+      font-weight: 800;
+      margin: 90px 0 40px;
+    }
+    p {
+      color: $colorFontGray;
+      font-size: 23px;
+      line-height: 1.7;
+      padding: 40px 10px 90px 0;
+    }
+  }
+  .cooking {
+    h3 {
+      margin: 60px 0 30px;
+    }
+    img {
+      width: 85%;
+    }
+    p {
+      strong {
+        display: block;
+        color: $colorPrimary;
+        font-weight: 800;
+      }
+      color: $colorFontGray;
+      font-size: 23px;
+      line-height: 1.7;
+      padding: 35px 0;
+    }
+  }
+  // 섹션 오른쪽 : 기본정보-영양정보-재료-제품
+  .detail_right {
+    position: relative;
+    float: right;
+    width: 30%;
+    margin: 350px 0 0 5%;
+    border-left: 1px solid $colorFontLight;
+    @include clear;
+  }
+  .mini_menu {
+    position: absolute;
+    top: -400px;
+    left: 0;
+    width: 100%;
+    min-height: 350px;
+    color: #ffffff;
+    background-color: $colorPrimary;
+    padding: 35px 0;
+    &::after {
+      @include content;
+      top: -6px;
+      left: 10px;
+      width: 28px;
+      height: 40px;
+      background: url("../img/sub_detail/mini_top.png") no-repeat;
+    }
+  }
+  .mini01 {
+    margin: 0 5%;
+    @include desktop {
+      margin: 0;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+    li {
+      text-align: center;
+      width: 32%;
+    }
+    p {
+      position: relative;
+      line-height: 1.8;
+    }
+    p:last-child {
+      font-size: $fontSizeS;
+    }
+    strong {
+      font-size: $fontSizeVisual;
+    }
+    p.mn_time {
+      margin: 0 0 0 30px;
+    }
+    .mn_time::before {
+      @include content;
+      top: 3px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background: url("../img/sub_detail/mini01_01.png") no-repeat;
+    }
+    p.mn_people {
+      margin: 0 0 0 20px;
+    }
+    .mn_people::before {
+      @include content;
+      top: 3px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+      background: url("../img/sub_detail/mini01_02.png") no-repeat;
+    }
+  }
+  .mini02 {
+    margin: 15px 5%;
+    @include desktop {
+      margin: 15px 5px;
+    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      height: 60px;
+      color: #ffffff;
+      font-size: $fontSizeN;
+      font-weight: 800;
+      background-color: $colorSubColor;
+      border-radius: 5px;
+    }
+  }
+  .btn_nutri {
+    position: relative;
+    padding: 15px 30px 15px 43px;
+    &::before {
+      @include content;
+      top: 19px;
+      left: 8px;
+      width: 26px;
+      height: 22px;
+      background: url("../img/sub_detail/mini02_01.png") no-repeat;
+    }
+    &::after {
+      @include content;
+      top: 26px;
+      right: 10px;
+      width: 14px;
+      height: 8px;
+      background: url("../img/sub_detail/mini02_02.png") no-repeat;
+    }
+    &:hover {
+      background-color: #f75050;
+    }
+  }
+  .btn_print {
+    padding: 17px 30px;
+    background: url("../img/sub_detail/mini02_03.png") no-repeat center;
+    span {
+      color: transparent;
+      font-size: 0;
+    }
+  }
+  .mini03 {
+    margin: 0 5%;
+    @include desktop {
+      margin: 0 3px;
+    }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      width: 30%;
+      height: 70px;
+      border: 1px solid $colorSubColor;
+      border-radius: 5px;
+    }
+    button:nth-child(1) {
+      background: url("../img/sub_detail/mini03_01.png") no-repeat center;
+    }
+    button:nth-child(2) {
+      background: url("../img/sub_detail/mini03_02.png") no-repeat center;
+    }
+    button:nth-child(3) {
+      background: url("../img/sub_detail/mini03_03.png") no-repeat center;
+    }
+    span {
+      color: transparent;
+    }
+  }
+  .mini_nutri {
+    display: none;
+    position: absolute;
+    top: 222px;
+    color: $colorFontBlack;
+    border: 1px solid $colorFontBlack;
+    background-color: #ffffff;
+    z-index: 1;
+    p {
+      color: $colorFontGray;
+      font-size: $fontSizeS;
+      line-height: 1.5;
+      padding: 20px;
+    }
+  }
+  .top_nutri {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid $colorSubColor;
+    box-shadow: 0 7px rgba(0, 0, 0, 0.07);
+    h3 {
+      color: $colorSubColor;
+      font-size: 24px;
+    }
+    .btn_close {
+      position: absolute;
+      top: 17px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      background: url("../img/sub_detail/mini02_04.png") no-repeat center;
+      span {
+        @include blind;
+      }
+    }
+  }
+  .tbl_nutri {
+    width: 100%;
+    padding: 30px 20px 0;
+    tr {
+      border-bottom: 1px solid $colorFontLight;
+    }
+    th {
+      padding: 15px 20px;
+      width: 80%;
+      text-align: left;
+    }
+    td {
+      padding: 15px 20px;
+      width: 20;
+      text-align: right;
+      font-weight: 800;
+    }
+  }
+  .ingredients {
+    padding: 20px 20px 40px;
+    border-bottom: 1px solid $colorFontLight;
+    ul li {
+      h4 {
+        margin: 40px 0 10px;
+        color: $colorPrimary;
+        font-size: $fontSizeL;
+      }
+      p {
+        margin: 0 0 0 12px;
+        color: $colorFontGray;
+        font-size: $fontSizeN;
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+    }
+  }
+  .product {
+    padding: 40px 20px;
+    border-bottom: 1px solid $colorFontLight;
+    li {
+      position: relative;
+      text-align: center;
+      margin: 10px 0;
+      padding: 10px 0;
+    }
+    a {
+      display: block;
+    }
+    p {
+      color: $colorFontGray;
+      font-size: $fontSizeN;
+    }
+    .over_img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(200, 200, 200, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      > p {
+        font-size: $fontSizeS;
+        margin: 15px 0 0;
+        line-height: 1.4;
+      }
+      &::after {
+        @include content;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 55px;
+        height: 55px;
+        background: url("../img/sub_detail/product04.png");
+      }
+      &.on_product {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .related {
+  }
+}

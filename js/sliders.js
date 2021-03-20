@@ -243,7 +243,6 @@ function tipsSlideShow() {
       },700);
     }
     slider.classList.add(ANIMATE_CN);
-    console.log(currentIndex, index);
   }
   setInterval(tipsAutoSlide, 4000);
 }
