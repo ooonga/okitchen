@@ -25,19 +25,19 @@ dropsParent.addEventListener("mouseleave", function(){
   categoryDrops.classList.remove(ONDROPS_CN);
 });
 // 상단으로 돌아가기 버튼
-const btnTop = document.querySelector('.btn_top');
+const TOP_BTN = document.querySelector('.btn_top');
 const ACTIVETOP_CN = 'active_btnTop';
 // 버튼 보이기 & 숨기기
 function moveScroll() {
   if( window.scrollY>500 ) {
-    btnTop.classList.add(ACTIVETOP_CN);
+    TOP_BTN.classList.add(ACTIVETOP_CN);
   } else {
-    btnTop.classList.remove(ACTIVETOP_CN);
+    TOP_BTN.classList.remove(ACTIVETOP_CN);
   }
 }
 window.addEventListener('scroll', moveScroll);
 // 상단 이동
-btnTop.addEventListener('click', function() {
+TOP_BTN.addEventListener('click', function() {
   window.scrollTo (
     {
       top:0,
@@ -45,22 +45,3 @@ btnTop.addEventListener('click', function() {
     }
   );
 });
-
-//각 페이지 a-jax 연결
-// const handlelink = document.querySelectorAll('a');
-// for(let i=0; i<handlelink.length; i++) {
-//   handlelink[i].addEventListener('click', function(event) {
-//     event.preventDefault();
-//     let target = event.target.getAttribute('href');
-//     const mainId = document.querySelector("#contents");
-//     const xhr = new XMLHttpRequest();
-
-//     xhr.onreadystatechange = function() {
-//       if( this.readyState === 4 ) {
-//         mainId.innerHTML = xhr.responseText;
-//       }
-//     }
-//     xhr.open('get',target, true);
-//     xhr.send();
-//   });
-// }

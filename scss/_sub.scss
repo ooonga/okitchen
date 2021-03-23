@@ -4,7 +4,7 @@
     font-size: $fontSizeMark;
   }
 }
-// 계량 팁
+// 계량 팁 서브 페이지
 .best_bg {
   background-color: #eeeeee;
 }
@@ -114,8 +114,8 @@
     margin: 0;
   }
 }
-// 요리 레시피 상세페이지
-.sub_detail_top_img {
+// 요리 레시피 상세 페이지
+.sub_detail_top {
   background: #eeeeee url("../img/sub_detail/bg.png");
   background-repeat: repeat-x;
   background-position: 60%;
@@ -178,6 +178,14 @@
     margin: 350px 0 0 5%;
     border-left: 1px solid $colorFontLight;
     @include clear;
+    &::before {
+      @include content;
+      top: 93%;
+      left: -1px;
+      width: 1px;
+      height: 100%;
+      background: $colorFontLight;
+    }
   }
   .mini_menu {
     position: absolute;
@@ -319,18 +327,25 @@
     }
   }
   .mini_nutri {
-    display: none;
     position: absolute;
-    top: 222px;
     color: $colorFontBlack;
     border: 1px solid $colorFontBlack;
     background-color: #ffffff;
+    top: 215px;
+    opacity: 0;
+    visibility: hidden;
     z-index: 1;
+    transition: 0.3s;
     p {
       color: $colorFontGray;
       font-size: $fontSizeS;
       line-height: 1.5;
       padding: 20px;
+    }
+    &.active {
+      top: 222px;
+      opacity: 1;
+      visibility: visible;
     }
   }
   .top_nutri {
@@ -429,12 +444,140 @@
         height: 55px;
         background: url("../img/sub_detail/product04.png");
       }
-      &.on_product {
+      &.on {
         opacity: 1;
         visibility: visible;
       }
     }
   }
   .related {
+    padding: 40px 20px;
+    .items_wrap {
+      flex-direction: column;
+      margin: 30px 0 0;
+    }
+    .item {
+      width: 100%;
+      padding: 10px 0;
+    }
+  }
+}
+// 디테일 부분 하단 슬라이드
+.sub_detail_bottom {
+  margin: 0 0 90px;
+  padding: 0 10px;
+  .inner {
+    position: relative;
+    border-top: 1px solid $colorFontLight;
+    h3 {
+      font-size: $fontSizeMark;
+      padding: 50px 0 30px;
+      background-color: #ffffff;
+    }
+  }
+  .slider_nav {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    button {
+      width: 35px;
+      height: 31px;
+      span {
+        @include blind;
+      }
+    }
+    button.btn_subPrev {
+      margin: -6px;
+      background: url("../img/sub_detail/slider_btn.png") no-repeat;
+    }
+    button.btn_subNext {
+      background: url("../img/sub_detail/slider_btn.png") no-repeat;
+      background-position: -34px 0;
+    }
+  }
+  .sub_slider {
+    width: 100%;
+    min-height: 300px;
+  }
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .slides {
+    position: absolute;
+    width: 100%;
+    background-color: #ffffff;
+  }
+}
+// 신규 레시피 서브 페이지
+.new_contents {
+  margin: 50px 0 90px;
+}
+// 인기 레시피 서브 페이지
+.best_contents {
+  margin: 50px 0 90px;
+  .lookup {
+    @include clear;
+    padding: 0 10px;
+    p {
+      float: left;
+    }
+    span {
+      color: $colorSubColor;
+      font-size: $fontSizeN;
+      margin: 0 2px 0 5px;
+    }
+    .lookup_util {
+      float: right;
+      li {
+        position: relative;
+        float: left;
+        color: $colorFontGray;
+        transition: 0.3s;
+        a {
+          padding: 0 0 0 25px;
+          display: block;
+        }
+        &:hover {
+          color: $colorFontBlack;
+        }
+      }
+      li::before {
+        @include content;
+        top: 6px;
+        left: 10px;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: $colorFontLight;
+      }
+      li.on_list {
+        color: $colorFontBlack;
+        background: url("../img/common/check.png") no-repeat;
+        background-position: 5px center;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .page_indicate {
+    text-align: center;
+  }
+  button {
+    width: 32px;
+    height: 32px;
+    &:hover {
+      color: $colorSubColor;
+      &.on_page {
+        color: #ffffff;
+      }
+    }
+  }
+  .on_page {
+    color: #ffffff;
+    border-radius: 50%;
+    background-color: $colorPrimary;
   }
 }

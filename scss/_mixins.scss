@@ -30,7 +30,7 @@
   }
 }
 
-// 이미지 스프라이트 매개변수 굿....
+// 이미지 스프라이트 매개변수
 @mixin imgSprite($width, $height, $size, $x: 0, $y: 0) {
   width: $width;
   height: $height;

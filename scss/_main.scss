@@ -16,7 +16,7 @@
     background-position: center;
     background-size: cover;
     @include desktop {
-      background-position: left -330px center;
+      background-position: left -360px center;
     }
     &.s1_bg {
       background-image: url("../img/main/main_visual01.jpg");

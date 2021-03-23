@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>오'키친</title>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="wrap">
@@ -95,21 +95,22 @@
           </div>
         </div>
       </div>
-      <div class="contents sub">
+      <div class="contents sub best_contents">
         <div class="inner">
           <div class="lookup">
             <p>검색결과<span>34</span>건 조회</p>
             <ul class="lookup_util">
-              <li><a href="#">최신순</a></li>
+              <li class="on_list"><a href="#">최신순</a></li>
               <li><a href="#">조회순</a></li>
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="contents">
-        <div class="content" id="recipe"></div>
-        <div class="page_indicate">
-          1,2,>
+          <div class="content">
+            <div class="items_wrap" id="recipe"></div>
+            <div class="page_indicate">
+              <button type="button" class="btn_one on_page"><span>1</span></button>
+              <button type="button" class="btn_two"><span>2</span></button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -147,5 +148,6 @@
     <button type="button" class="btn_top"></button>
   </div>
   <script src="../js/common.js"></script>
+  <script src="../js/bestRecipe.js"></script>
 </body>
 </html>
