@@ -2,7 +2,7 @@
 
 ---
 
-## ✔ <a href="">CLONE SITE : 오키친</a>
+## ✔ <a href="http://go0lee.cafe24.com/okitchen/index.html">CLONE SITE : 오키친</a>
 
 1. 유형　**PC Website**
 2. 제작 기간　**2021. 03. ~ 2021. 03**
